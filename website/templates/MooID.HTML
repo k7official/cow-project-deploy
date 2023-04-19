@@ -1,0 +1,195 @@
+<html>
+<head>
+<title>Hualien Livestock ID System</title>
+<link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
+<style type="text/css">
+	
+	body{
+		
+		background-image: url({{ url_for('static', filename='Images/pastureb.png') }});
+		background-attachment: scroll;
+		background-position: center;
+		color: white;
+		font-size: 18px;
+				
+	}
+
+	.header{
+
+		background-image: url({{ url_for('static', filename='Images/MoodID.png') }});;
+		background-position: center;
+		background-size: cover;
+
+		position: relative; 
+		left: 600px ;
+		top: -20px ;
+
+		width: 200px;
+		height: 100px;
+
+		padding: 70px;
+		
+	}
+
+	.nav li{
+		position: relative;
+		
+		top: -70px;
+		left: 350px;
+		float:left;
+		
+		color: rgb(52, 51, 51);
+		
+		font-family: 'DM Sans'; font-size: 23px;
+		padding: 12px;
+		border: 1px solid rgb(255, 255, 255);
+		margin:50px;
+		list-style-type: none;
+		background-color: rgba(255, 255, 255, 0.31);
+		border-radius: 7px;
+		box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
+
+		-webkit-transition-duration: 0.4s; /* Safari */
+    		transition-duration: 0.4s;
+   		text-decoration: none;
+    		overflow: hidden;
+   		cursor: pointer;
+		
+		}
+	
+		.nav li:hover{
+			background-color: #ddd;
+		}
+
+		.dropbtn {
+		
+		color: rgb(52, 51, 51);		
+		font-family: 'DM Sans'; font-size: 23px;
+		padding: 12px;
+		border: 1px solid rgb(255, 255, 255);
+		margin:50px;
+		list-style-type: none;
+		background-color: rgba(255, 255, 255, 0.31);
+		border-radius: 7px;
+		box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.2);
+
+		position: absolute;
+		
+		top: -70px;
+		left: 350px;
+		float:left;
+		
+		}
+
+		.dropbtn:hover{background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;} /*display dropdown on hover*/
+
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.dropdown-content { /* content of dropdown*/
+
+			display: none;
+			position: relative;
+			background-color: rgba(255, 255, 255, 0.808);;
+
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+			border-radius: 7px;
+
+			top: 43px;
+			left: 407px;
+			float:left;
+			}
+
+		.dropdown-content a {
+				font-family: 'DM Sans'; font-size: 15px;
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #d1cfcf;
+			border-radius: 5px;
+		}
+
+	footer{
+		width: 300px;
+		height: 25px;
+		background-color: rgba(255,255,255, 0.2);
+		border-radius: 14px;
+		padding: 5px;
+		color: white;
+		margin-bottom: 0px;
+		padding-bottom: 7px;
+		position: absolute;
+		bottom: 20px;
+		left:600px;
+	
+		font-family: 'DM Sans'; font-size: 23px;
+		}
+
+	
+	
+
+
+	p{
+		width: 600px;
+		height: 200px;
+		padding: 9px;
+		margin: 75px;
+		font-size: 20px;
+		border:1px solid white;
+		background-color: rgba(255,255,255, 0.2);
+		border-radius: 10px;
+		position:absolute;
+		right: 50px;
+		top: 200px;
+		
+		}
+	a{
+		text-decoration:none;
+		color: white;
+		display:block;
+		}
+
+
+	
+</style>
+</head>
+<body>
+
+
+<div class="header"></div> 
+
+<ul class='nav'>
+	<a href=#home><li>Home</li></a>
+	<a href="#how it works"> <li>How it Works </li> </a>
+	
+
+</ul>
+
+<div class="dropdown">
+	<button class="dropbtn">Administration</button>
+	<div class="dropdown-content">
+	  <a href="{{ url_for('views.add') }}">Add New Animal</a>
+	  <a href="{{ url_for('views.identify') }}">Identify a Cow</a>
+	  <a href="{{ url_for('views.display_all') }}">Livestock Database</a>
+	</div>
+  </div>
+
+
+
+	
+
+	<footer ><center><b>
+		&copy The MooID Crew
+	</footer></center></b>
+
+
+</body>
+</html>
